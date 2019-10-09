@@ -1,2 +1,3 @@
 # SalaryManagementSystem
  
+Salary Management System is aimed at efficient management of employee information, emoluments, expenses, net pay-outs, calculation salary based on workdays and pay salary etc. All of these are managed through a database. This project is terminal project, which implemented using PL/SQL and oracle database. The database is divided based on different conditions which are known as fragments and these fragments are kept at different locations which has Database Management System to deal with the data. The idea of dividing/fragmenting the data makes the system reliable, fast with better response. In case of database failures, the system remains functional though it may reduce performance. 
