@@ -1,0 +1,43 @@
+# PaySQL :: Local development stack
+#
+#   docker compose up
+#
+# Brings up Oracle Database Free, creates the PAYSQL application user, and applies
+# all Flyway migrations plus the demo seed data. Copy .env.example to .env first.
+
+services:
+  oracle:
+    image: gvenzl/oracle-free:23-slim-faststart
+    container_name: paysql-oracle
+    ports:
+      - "1521:1521"
+    environment:
+      ORACLE_PASSWORD: ${ORACLE_PASSWORD:-change-me-admin}
+      APP_USER: ${APP_USER:-paysql}
+      APP_USER_PASSWORD: ${APP_USER_PASSWORD:-change-me}
+    healthcheck:
+      test: ["CMD", "healthcheck.sh"]
+      interval: 10s
+      timeout: 10s
+      retries: 20
+    volumes:
+      - oracle-data:/opt/oracle/oradata
+
+  flyway:
+    image: flyway/flyway:10
+    container_name: paysql-flyway
+    depends_on:
+      oracle:
+        condition: service_healthy
+    environment:
+      FLYWAY_URL: jdbc:oracle:thin:@//oracle:1521/FREEPDB1
+      FLYWAY_USER: ${APP_USER:-paysql}
+      FLYWAY_PASSWORD: ${APP_USER_PASSWORD:-change-me}
+      FLYWAY_SCHEMAS: ${APP_USER:-paysql}
+      FLYWAY_LOCATIONS: filesystem:/workspace/db/migrations,filesystem:/workspace/db/seed
+    command: -connectRetries=30 migrate
+    volumes:
+      - ../:/workspace
+
+volumes:
+  oracle-data:

@@ -15,10 +15,22 @@ jobs:
       - name: Verify project scaffolding
         run: |
           set -e
-          for f in LICENSE README.md CONTRIBUTING.md AGENTS.md llms.txt docs/PROPOSAL.md mkdocs.yml; do
+          for f in LICENSE README.md CONTRIBUTING.md AGENTS.md llms.txt docs/PROPOSAL.md mkdocs.yml flyway.conf db/install.sql; do
             test -f "$f" || { echo "::error::Missing required file: $f"; exit 1; }
           done
+          test -d db/migrations || { echo "::error::Missing db/migrations"; exit 1; }
           echo "Scaffolding OK."
+
+      - name: Check migration naming
+        run: |
+          set -e
+          for f in db/migrations/V*.sql; do
+            case "$(basename "$f")" in
+              V*__*.sql) ;;
+              *) echo "::error::Bad migration name: $f (expected V<version>__<desc>.sql)"; exit 1;;
+            esac
+          done
+          echo "Migration naming OK."
 
       # ─────────────────────────────────────────────────────────────
       # TODO (Phase 1+): bring up Oracle Database Free as a service,

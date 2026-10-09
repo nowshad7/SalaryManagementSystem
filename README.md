@@ -43,8 +43,24 @@ open-source product. Development is phased — see the plan and roadmap:
 
 ## 🚀 Quickstart
 
-> ⏳ One-command Docker setup (`docker compose up`) and REST endpoints land in Phase 1–3.
-> Follow progress in the [getting-started guide](./docs/getting-started.md).
+Spin up Oracle Free with the full schema and demo data:
+
+```bash
+git clone https://github.com/nowshad7/SalaryManagementSystem.git
+cd SalaryManagementSystem/docker
+cp .env.example .env        # edit the passwords
+docker compose up           # Oracle Free + Flyway migrations + demo data
+```
+
+Then query the demo company:
+
+```sql
+SELECT * FROM v_current_salary;
+SELECT * FROM v_payroll_register;
+```
+
+See the [getting-started guide](./docs/getting-started.md) for Flyway and manual (SQL*Plus)
+installs. REST endpoints (ORDS) arrive in Phase 3.
 
 ## 🧩 Roles
 

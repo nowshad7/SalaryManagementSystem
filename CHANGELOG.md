@@ -7,6 +7,14 @@ All notable changes to PaySQL are documented here. The format is based on
 ## [Unreleased]
 
 ### Added
+- **Phase 1 — data model redesign:** normalized, component-based, effective-dated schema as
+  Flyway migrations (`db/migrations/`): reference tables, core HR, compensation, payroll, and
+  audit/error logging. Reporting views (`v_current_salary`, `v_payslip_detail`,
+  `v_payroll_register`), demo seed data migrating the original 10 employees (`db/seed/`), a
+  SQL*Plus installer (`db/install.sql`), Flyway config, and a Docker Compose stack
+  (Oracle Free + Flyway). Fixes original datatype and spelling issues (dates, money,
+  `TRANSECTION`→`salary_payment`, `ammount`→`amount`) and replaces the `Check_Valid` cursor
+  with a uniqueness constraint.
 - **Phase 0 — scaffolding & cleanup:** MIT license, project rebranded to **PaySQL**,
   documentation skeleton (`docs/`), community health files (contributing, code of conduct,
   security), AI/SEO discoverability files (`AGENTS.md`, `llms.txt`, `CITATION.cff`),
