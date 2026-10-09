@@ -6,8 +6,11 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 [![PL/SQL](https://img.shields.io/badge/Oracle-PL%2FSQL-F80000?logo=oracle&logoColor=white)](https://www.oracle.com/database/)
-[![Status](https://img.shields.io/badge/status-modernization%20in%20progress-blue.svg)](./docs/PROPOSAL.md)
+[![Release](https://img.shields.io/badge/release-v1.0.0-blue.svg)](./CHANGELOG.md)
+[![Docs](https://img.shields.io/badge/docs-site-success.svg)](./docs/index.md)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](./CONTRIBUTING.md)
+
+<img src="./docs/images/architecture.svg" alt="PaySQL architecture" width="760">
 
 </div>
 
@@ -32,10 +35,10 @@ AI-agent client to build on.
 
 ## 📦 Project status
 
-PaySQL began as a university PL/SQL project and is being modernized into a production-grade
-open-source product. Development is phased — see the plan and roadmap:
+PaySQL began as a university PL/SQL project and has been rebuilt into a documented, open-source
+payroll platform (**v1.0.0**). See the plan and what's next:
 
-- 📋 **[Modernization Proposal & Roadmap](./docs/PROPOSAL.md)**
+- 📋 **[Modernization Proposal](./docs/PROPOSAL.md)** · 🗺️ **[Roadmap](./ROADMAP.md)**
 - 📚 **[Documentation](./docs/index.md)**
 
 > The original coursework scripts live under `SalaryManagement/` and are preserved at the

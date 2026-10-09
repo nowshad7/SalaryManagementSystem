@@ -6,7 +6,16 @@ All notable changes to PaySQL are documented here. The format is based on
 
 ## [Unreleased]
 
+_Nothing yet._
+
+## [1.0.0] - 2026-10-09
+
+First release of modernized PaySQL — a complete, documented, open-source PL/SQL payroll platform.
+
 ### Added
+- **Phase 4 — polish & launch:** architecture diagram (`docs/images/architecture.svg`),
+  deployable MkDocs Material site with Mermaid rendering and a GitHub Pages workflow
+  (`.github/workflows/docs.yml`), `ROADMAP.md`, discoverability finish, and release preparation.
 - **Phase 3 — API & security:** a versioned ORDS REST API (`api/ords_modules.sql`) over the
   engine — employees, payslips, and the full pay-run lifecycle under `/paysql/v1/` — plus schema
   REST-enablement (`api/ords_enable.sql`) and API protection (`api/ords_security.sql`).

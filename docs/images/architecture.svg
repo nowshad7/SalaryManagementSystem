@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 420" font-family="Segoe UI, Helvetica, Arial, sans-serif" role="img" aria-label="PaySQL architecture diagram">
+  <!-- card background for legibility in light and dark -->
+  <rect x="0" y="0" width="960" height="420" rx="16" fill="#ffffff"/>
+  <rect x="0.5" y="0.5" width="959" height="419" rx="16" fill="none" stroke="#e2e2e2"/>
+
+  <text x="480" y="40" text-anchor="middle" font-size="22" font-weight="700" fill="#1a1a1a">PaySQL Architecture</text>
+  <text x="480" y="64" text-anchor="middle" font-size="13" fill="#6b6b6b">Database-native payroll engine, REST-ready via ORDS</text>
+
+  <!-- Clients -->
+  <rect x="40" y="110" width="180" height="200" rx="12" fill="#fbece9" stroke="#c74634" stroke-width="1.5"/>
+  <text x="130" y="138" text-anchor="middle" font-size="15" font-weight="700" fill="#c74634">Clients</text>
+  <text x="130" y="168" text-anchor="middle" font-size="12.5" fill="#333">Web apps</text>
+  <text x="130" y="192" text-anchor="middle" font-size="12.5" fill="#333">Mobile apps</text>
+  <text x="130" y="216" text-anchor="middle" font-size="12.5" fill="#333">AI agents</text>
+  <text x="130" y="240" text-anchor="middle" font-size="12.5" fill="#333">SQL*Plus / SQLcl</text>
+  <text x="130" y="276" text-anchor="middle" font-size="11" fill="#888">HTTPS / REST (JSON)</text>
+
+  <!-- ORDS -->
+  <rect x="300" y="130" width="180" height="160" rx="12" fill="#eef4fb" stroke="#2f6fb0" stroke-width="1.5"/>
+  <text x="390" y="158" text-anchor="middle" font-size="15" font-weight="700" fill="#2f6fb0">ORDS</text>
+  <text x="390" y="182" text-anchor="middle" font-size="12.5" fill="#333">/paysql/v1/</text>
+  <text x="390" y="206" text-anchor="middle" font-size="12.5" fill="#333">OAuth2 + roles</text>
+  <text x="390" y="230" text-anchor="middle" font-size="12.5" fill="#333">REST handlers</text>
+  <text x="390" y="262" text-anchor="middle" font-size="11" fill="#888">PL/SQL calls</text>
+
+  <!-- Packages -->
+  <rect x="560" y="110" width="180" height="200" rx="12" fill="#eef7ef" stroke="#2e7d46" stroke-width="1.5"/>
+  <text x="650" y="138" text-anchor="middle" font-size="15" font-weight="700" fill="#2e7d46">PL/SQL Engine</text>
+  <text x="650" y="166" text-anchor="middle" font-size="12.5" fill="#333">pkg_payroll</text>
+  <text x="650" y="190" text-anchor="middle" font-size="12.5" fill="#333">pkg_employee</text>
+  <text x="650" y="214" text-anchor="middle" font-size="12.5" fill="#333">pkg_tax · pkg_leave</text>
+  <text x="650" y="238" text-anchor="middle" font-size="12.5" fill="#333">pkg_error</text>
+  <text x="650" y="276" text-anchor="middle" font-size="11" fill="#888">SQL + triggers</text>
+
+  <!-- Database -->
+  <rect x="820" y="110" width="110" height="200" rx="12" fill="#fdf6e9" stroke="#b8860b" stroke-width="1.5"/>
+  <text x="875" y="138" text-anchor="middle" font-size="14" font-weight="700" fill="#9a7209">Oracle</text>
+  <text x="875" y="156" text-anchor="middle" font-size="14" font-weight="700" fill="#9a7209">Schema</text>
+  <text x="875" y="186" text-anchor="middle" font-size="11.5" fill="#333">Tables</text>
+  <text x="875" y="208" text-anchor="middle" font-size="11.5" fill="#333">Views</text>
+  <text x="875" y="230" text-anchor="middle" font-size="11.5" fill="#333">Audit log</text>
+  <text x="875" y="252" text-anchor="middle" font-size="11.5" fill="#333">Error log</text>
+
+  <!-- arrows -->
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#777"/>
+    </marker>
+  </defs>
+  <line x1="220" y1="210" x2="298" y2="210" stroke="#777" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="480" y1="210" x2="558" y2="210" stroke="#777" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="740" y1="210" x2="818" y2="210" stroke="#777" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <text x="480" y="360" text-anchor="middle" font-size="12" fill="#6b6b6b">Managed by Flyway migrations · tested with utPLSQL · one-command Docker setup</text>
+</svg>

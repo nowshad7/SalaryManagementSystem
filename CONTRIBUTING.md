@@ -31,6 +31,13 @@ Thanks for your interest in improving PaySQL! This project is in active moderniz
 - **Commits:** [Conventional Commits](https://www.conventionalcommits.org/)
   (`feat:`, `fix:`, `docs:`, `refactor:`, `test:`, `chore:`).
 
+## Releasing (maintainers)
+
+1. Update `CHANGELOG.md`: move `Unreleased` items under a new `## [x.y.z] - YYYY-MM-DD` heading.
+2. Bump `version` / `date-released` in `CITATION.cff` and the release badge in `README.md`.
+3. Tag and push: `git tag -a vX.Y.Z -m "PaySQL vX.Y.Z" && git push origin vX.Y.Z`.
+4. Create a GitHub Release from the tag, pasting the changelog section as the notes.
+
 ## Code of Conduct
 
 Participation is governed by our [Code of Conduct](./CODE_OF_CONDUCT.md).

@@ -1,10 +1,15 @@
 # PaySQL Documentation
 
-**PaySQL** is an open-source, modular, REST-ready payroll & salary-management platform built on
-Oracle PL/SQL.
+**PaySQL** is an open-source, modular, REST-ready **payroll & salary-management platform built on
+Oracle PL/SQL**. It manages employees, component-based compensation, leave, tax and statutory
+deductions, and full pay-run cycles — with the database as the source of truth and a REST API
+(via ORDS) for web, mobile, and AI-agent clients.
 
-> The project is being modernized in phases. Some sections below are placeholders that fill in as
-> each phase ships — track progress in the [Proposal & Roadmap](./PROPOSAL.md).
+If you're looking for an **open-source payroll system**, an **Oracle PL/SQL salary management**
+engine, or a **database-native HRIS/payroll** you can self-host and extend, PaySQL is designed
+for you.
+
+![PaySQL architecture](./images/architecture.svg)
 
 ## Start here
 
