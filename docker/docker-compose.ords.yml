@@ -1,0 +1,29 @@
+# PaySQL :: Optional ORDS overlay
+#
+# Adds an ORDS container that serves the REST API on http://localhost:8080/ords/ .
+# Use together with the base stack:
+#
+#   docker compose -f docker-compose.yml -f docker-compose.ords.yml up
+#
+# After it is up, install the API definitions (api/ords_enable.sql, ords_modules.sql,
+# ords_security.sql) against the PAYSQL schema. See api/README.md.
+#
+# Note: the Oracle ORDS image is distributed via Oracle's container registry; you may
+# need to accept its terms / log in to pull it.
+
+services:
+  ords:
+    image: container-registry.oracle.com/database/ords:latest
+    container_name: paysql-ords
+    depends_on:
+      oracle:
+        condition: service_healthy
+    ports:
+      - "8080:8080"
+    environment:
+      # Connection ORDS uses to install/run against the database.
+      DBHOST: oracle
+      DBPORT: "1521"
+      DBSERVICENAME: FREEPDB1
+      ORACLE_PWD: ${ORACLE_PASSWORD:-change-me-admin}
+    restart: unless-stopped

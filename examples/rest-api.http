@@ -1,0 +1,72 @@
+### PaySQL REST API examples
+### Works with the VS Code "REST Client" extension, or copy into curl.
+### Set @host and @token for your environment.
+
+@host = http://localhost:8080/ords/paysql/v1
+@token = REPLACE_WITH_BEARER_TOKEN
+
+### List employees
+GET {{host}}/employees
+Authorization: Bearer {{token}}
+
+### Get one employee
+GET {{host}}/employees/1
+Authorization: Bearer {{token}}
+
+### Create an employee
+POST {{host}}/employees
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "code": "EMP0011",
+  "first_name": "New",
+  "last_name": "Hire",
+  "email": "new.hire@example.com",
+  "dept_code": "ENG",
+  "grade_code": "J2",
+  "hire_date": "2026-02-01"
+}
+
+### An employee's payslip history
+GET {{host}}/employees/1/payslips
+Authorization: Bearer {{token}}
+
+### Payslip detail (line items)
+GET {{host}}/payslips/1
+Authorization: Bearer {{token}}
+
+### --- Pay-run lifecycle ---
+
+### 1. Calculate a pay run for a period
+POST {{host}}/payruns
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{ "period_code": "2026-01" }
+
+### 2. Approve (use the pay_run_id returned above)
+POST {{host}}/payruns/1/approve
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{ "approved_by": "alice" }
+
+### 3. Post
+POST {{host}}/payruns/1/post
+Authorization: Bearer {{token}}
+
+### 4. Pay from a fund
+POST {{host}}/payruns/1/pay
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{ "fund_code": "MAIN" }
+
+### 5. Close
+POST {{host}}/payruns/1/close
+Authorization: Bearer {{token}}
+
+### Payroll register for a run
+GET {{host}}/payruns/1/register
+Authorization: Bearer {{token}}

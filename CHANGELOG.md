@@ -7,6 +7,12 @@ All notable changes to PaySQL are documented here. The format is based on
 ## [Unreleased]
 
 ### Added
+- **Phase 3 — API & security:** a versioned ORDS REST API (`api/ords_modules.sql`) over the
+  engine — employees, payslips, and the full pay-run lifecycle under `/paysql/v1/` — plus schema
+  REST-enablement (`api/ords_enable.sql`) and API protection (`api/ords_security.sql`).
+  Least-privilege database roles (`db/security/roles.sql`) for the HR/Accountant/Employee/Auditor
+  personas, an optional ORDS Docker overlay (`docker/docker-compose.ords.yml`), runnable request
+  examples (`examples/rest-api.http`), and expanded API/security docs.
 - **Phase 2 — engine & packages:** PL/SQL packages as repeatable migrations —
   `pkg_error` (autonomous error logging), `pkg_tax` (progressive tax from `tax_slab`),
   `pkg_leave` (leave + unpaid-days), `pkg_employee` (effective-dated salary management), and

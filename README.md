@@ -60,7 +60,7 @@ SELECT * FROM v_payroll_register;
 ```
 
 See the [getting-started guide](./docs/getting-started.md) for Flyway and manual (SQL*Plus)
-installs. REST endpoints (ORDS) arrive in Phase 3.
+installs, and the [REST API docs](./docs/api.md) to expose it over HTTP via ORDS.
 
 ## 🧩 Roles
 

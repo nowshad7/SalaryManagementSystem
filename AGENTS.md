@@ -18,8 +18,10 @@ salary logic lives in versioned PL/SQL packages.
 | `db/migrations/` | Flyway schema migrations (`V*__*.sql`) |
 | `db/migrations/repeatable/` | Source of truth for packages, views, and triggers (`R__*.sql`, numeric-prefixed for compile order) |
 | `db/seed/` | Demo data |
-| `api/` | ORDS REST module definitions *(Phase 3+)* |
+| `db/security/` | Least-privilege database roles & grants |
+| `api/` | ORDS REST module + security definitions (opt-in layer, not in the Flyway path) |
 | `tests/` | utPLSQL test suites |
+| `examples/` | Ready-to-run REST API requests |
 | `docker/` | Docker Compose for Oracle Free + ORDS *(Phase 1+)* |
 | `SalaryManagement/` | Legacy university scripts (historical; see tag `v0-university`) |
 
