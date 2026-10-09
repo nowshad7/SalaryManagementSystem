@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+title: "PaySQL: Open-source PL/SQL payroll & salary-management platform"
+message: "If you use PaySQL in your work, please cite it using this metadata."
+type: software
+authors:
+  - name: "PaySQL contributors"
+repository-code: "https://github.com/nowshad7/SalaryManagementSystem"
+abstract: >-
+  PaySQL is an open-source, modular, REST-ready payroll and salary-management platform built on
+  Oracle PL/SQL, with a REST API exposed via Oracle REST Data Services (ORDS). It manages
+  employees, component-based compensation, leave, tax and statutory deductions, and full pay-run
+  cycles.
+keywords:
+  - payroll
+  - plsql
+  - oracle
+  - salary-management
+  - hr
+  - ords
+  - open-source-payroll
+license: MIT

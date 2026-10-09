@@ -1,0 +1,42 @@
+site_name: PaySQL
+site_description: Open-source, REST-ready payroll & salary-management platform built on Oracle PL/SQL
+site_url: https://nowshad7.github.io/SalaryManagementSystem/
+repo_url: https://github.com/nowshad7/SalaryManagementSystem
+repo_name: nowshad7/SalaryManagementSystem
+
+theme:
+  name: material
+  features:
+    - navigation.sections
+    - navigation.top
+    - search.suggest
+    - content.code.copy
+  palette:
+    - scheme: default
+      primary: red
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - scheme: slate
+      primary: red
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+
+nav:
+  - Home: index.md
+  - Getting Started: getting-started.md
+  - Architecture: architecture.md
+  - Data Model: data-model.md
+  - Payroll Engine: payroll-engine.md
+  - API: api.md
+  - Configuration: configuration.md
+  - Roles & Security: roles-and-security.md
+  - Proposal & Roadmap: PROPOSAL.md
+
+markdown_extensions:
+  - admonition
+  - toc:
+      permalink: true
+  - pymdownx.highlight
+  - pymdownx.superfences
