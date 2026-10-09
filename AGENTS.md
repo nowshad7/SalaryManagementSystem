@@ -15,11 +15,11 @@ salary logic lives in versioned PL/SQL packages.
 |---|---|
 | `docs/` | Documentation site (MkDocs Material) and the modernization proposal |
 | `docs/PROPOSAL.md` | The plan and phased roadmap — **read this first** |
-| `db/migrations/` | Flyway schema migrations (`V*__*.sql`) and repeatable package migrations (`R__*.sql`) *(Phase 1+)* |
-| `db/packages/` | Readable source of truth for PL/SQL packages *(Phase 2+)* |
-| `db/views/`, `db/seed/` | Reporting views and demo data *(Phase 1+)* |
+| `db/migrations/` | Flyway schema migrations (`V*__*.sql`) |
+| `db/migrations/repeatable/` | Source of truth for packages, views, and triggers (`R__*.sql`, numeric-prefixed for compile order) |
+| `db/seed/` | Demo data |
 | `api/` | ORDS REST module definitions *(Phase 3+)* |
-| `tests/` | utPLSQL test suites *(Phase 2+)* |
+| `tests/` | utPLSQL test suites |
 | `docker/` | Docker Compose for Oracle Free + ORDS *(Phase 1+)* |
 | `SalaryManagement/` | Legacy university scripts (historical; see tag `v0-university`) |
 

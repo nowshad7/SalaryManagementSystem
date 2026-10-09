@@ -7,6 +7,12 @@ All notable changes to PaySQL are documented here. The format is based on
 ## [Unreleased]
 
 ### Added
+- **Phase 2 — engine & packages:** PL/SQL packages as repeatable migrations —
+  `pkg_error` (autonomous error logging), `pkg_tax` (progressive tax from `tax_slab`),
+  `pkg_leave` (leave + unpaid-days), `pkg_employee` (effective-dated salary management), and
+  `pkg_payroll` (the rules-driven pay-run engine with a guarded
+  DRAFT→CALCULATED→APPROVED→POSTED→PAID→CLOSED lifecycle and idempotent payments). Real audit
+  triggers writing to `audit_log`, and a utPLSQL test suite (`tests/ut_payroll.pkg.sql`).
 - **Phase 1 — data model redesign:** normalized, component-based, effective-dated schema as
   Flyway migrations (`db/migrations/`): reference tables, core HR, compensation, payroll, and
   audit/error logging. Reporting views (`v_current_salary`, `v_payslip_detail`,
