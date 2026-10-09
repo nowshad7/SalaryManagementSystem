@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Documentation
+    url: https://github.com/nowshad7/SalaryManagementSystem/tree/master/docs
+    about: Read the PaySQL docs and roadmap before opening an issue.

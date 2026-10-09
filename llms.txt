@@ -1,0 +1,32 @@
+# PaySQL
+
+> PaySQL is an open-source, modular, REST-ready payroll and salary-management platform built on
+> Oracle PL/SQL. It manages employees, component-based compensation, leave, tax/statutory
+> deductions, and full pay-run cycles, with the database as the source of truth and a REST API
+> via Oracle REST Data Services (ORDS). Think "Bagisto/Magento for payroll," PL/SQL-native.
+
+PaySQL began as a university PL/SQL project and is being modernized into a production-grade
+open-source product following a phased roadmap. Keywords: open source payroll, Oracle PL/SQL
+salary management, ORDS payroll API, HR payroll database, open source HRIS.
+
+## Documentation
+
+- [Modernization Proposal & Roadmap](./docs/PROPOSAL.md): plan, feature vision, tech stack, phases
+- [Documentation Index](./docs/index.md): entry point to all docs
+- [Getting Started](./docs/getting-started.md): install and run (in progress)
+- [Architecture](./docs/architecture.md): how the system is structured
+- [Data Model](./docs/data-model.md): tables, relationships, ERD
+- [Payroll Engine](./docs/payroll-engine.md): the calculation engine and pay-run lifecycle
+- [API](./docs/api.md): ORDS REST endpoints
+- [Configuration](./docs/configuration.md): compensation components, tax rules
+- [Roles & Security](./docs/roles-and-security.md): HR, Accountant, Employee, Auditor roles
+
+## Project
+
+- [AGENTS.md](./AGENTS.md): guidance for AI agents and contributors
+- [Contributing](./CONTRIBUTING.md): how to contribute
+- [License](./LICENSE): MIT
+
+## Optional
+
+- [Legacy scripts](./SalaryManagement/): original university coursework (historical, do not deploy)

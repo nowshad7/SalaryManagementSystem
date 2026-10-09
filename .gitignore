@@ -1,0 +1,16 @@
+# Secrets / local env
+.env
+docker/.env
+
+# Flyway
+flyway-*/
+.flyway/
+
+# OS / editor
+.DS_Store
+*.swp
+.idea/
+.vscode/
+
+# Build / site output
+site/
